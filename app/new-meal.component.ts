@@ -1,24 +1,50 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
+import { FoodGroupList } from './food-group-list.model';
 @Component({
   selector: 'new-meal',
   template: `<div>
       <div *ngIf="childNewMeal">
         <h3>add meal</h3>
+        <div>
           <label for="name">name: </label>
           <input #newName type="text">
-          <label for="author">time: </label>
+          <label for="time">time: </label>
           <input #newTime type="time">
           <br>
-          <button (click)="submitForm(newName.value, newTime.value); newName.value=''; newTime.value='';">add</button>
+        </div>
+          <label for="fats">fats: </label>
+          <input #fats type="number">
+          <label for="fruits">fruits: </label>
+          <input #fruits type="number">
+          <label for="grains">grains: </label>
+          <input #grains type="number">
+          <label for="protein">protein: </label>
+          <input #protein type="number">
+          <label for="vegetables">vegetables: </label>
+          <input #vegetables type="number">
+          <label for="sweets">sweets: </label>
+          <input #sweets type="number">
+          <br>
+          <label>processed or unprocessed?</label>
+          <br>
+          <input name="processed" (change)="updateProcessed(true);" type="radio"> processed
+          <input name="processed" (change)="updateProcessed(false);" type="radio"> unprocessed
+          <br>
+          <button (click)="submitForm(newName.value, [fats.value, fruits.value, grains.value, protein.value, vegetables.value, sweets.value], newTime.value); newName.value=''; newTime.value='';">add</button>
       </div>
     </div>`
 })
 export class NewMealComponent{
   @Input() childNewMeal: Meal;
   @Output() newMealSender = new EventEmitter();
-  submitForm(name: string, time){
-    var newMeal: Meal = new Meal(name, [1,1,1,1], time);
+  processed = null;
+  updateProcessed(processed: boolean){
+    this.processed = processed;
+  }
+  submitForm(name: string, foodGroups: number[], time){
+    var newMeal: Meal = new Meal(name, this.processed, foodGroups, time);
     this.newMealSender.emit(newMeal);
   }
+
 }
