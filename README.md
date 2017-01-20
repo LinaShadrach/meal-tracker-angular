@@ -5,7 +5,7 @@
 #### By _**Lina Shadrach**_
 
 ## Description.
-_This app allows the user to make a list of the meals that they have eaten throughout a day. For each meal, the user can specify what food groups it satisfied,  the amount that was ingested of each food group, and the time that the meal was eaten._
+_This app allows the user to make a list of the meals that they have eaten throughout a day. For each meal, the user can specify what food groups it satisfied, the amount that was ingested of each food group, whether the meal was processed, and the time that the meal was eaten._
 
 
 ## Prerequisites
@@ -15,7 +15,8 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Bower](https://bower.io/)
-ANGULAR
+* [Angular](https://angularjs.org/)
+
 
 ## Installation
 
