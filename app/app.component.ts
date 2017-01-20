@@ -9,9 +9,7 @@ import { AllMealsComponent} from './all-meals.component';
   template: `
     <div class="container">
       <h1>Meal Tracker</h1>
-      <ol>
-        <li *ngFor="let meal of masterMealList">{{meal.name}} {{meal.amounts[0]}}</li>
-      </ol>
+      <all-meals [childMealList]="masterMealList" (clickSender)="editMeal($event)"></all-meals>
       <button (click)="showAddMealForm();">add meal</button>
       <new-meal [childNewMeal]="addMeal" (newMealSender)="addMealToList($event)"></new-meal>
       <h4>{{currentTime}}</h4>
@@ -25,13 +23,19 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
   addMeal = null;
   allMealsShow = true;
+  selectedMeal =null;
   masterMealList: Meal[] = [
     new Meal("macaroni and cheese", true, [1, 0, 1, 1, 1, 0], this.currentTime)
   ];
   showAddMealForm() {
     this.addMeal = true;
   }
-
+  editMeal(clickedMeal) {
+      this.selectedMeal = clickedMeal;
+    }
+    doneEditing() {
+      this.selectedMeal = null;
+    }
   addMealToList(newMealFromChild: Meal) {
     this.masterMealList.push(newMealFromChild);
     this.addMeal = false;
