@@ -3,7 +3,8 @@ import { Meal } from './meal.model';
 import { FoodGroupList } from './food-group-list.model';
 @Component({
   selector: 'new-meal',
-  template: `<div>
+  template: `
+    <div>
       <div *ngIf="childNewMeal">
         <h3>add meal</h3>
         <div>
@@ -33,7 +34,8 @@ import { FoodGroupList } from './food-group-list.model';
           <br>
           <button (click)="submitForm(newName.value, [fats.value, fruits.value, grains.value, protein.value, vegetables.value, sweets.value], newTime.value); newName.value=''; newTime.value='';">add</button>
       </div>
-    </div>`
+    </div>
+  `
 })
 export class NewMealComponent{
   @Input() childNewMeal: Meal;

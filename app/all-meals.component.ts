@@ -10,19 +10,20 @@ import { Meal } from './meal.model';
       <option value="unprocessedMeals">unprocessed meals</option>
     </select>
     <div *ngFor="let meal of childMealList">
-      <h4>{{meal.name}} </h4>
+      <h4>{{meal.name}}</h4>
       <ul>
-        <li *ngFor="let foodGroup of meal.foodGroups">{{foodGroup}}</li>
+        <li *ngFor="let foodGroup of meal.amounts"> {{foodGroup}}</li>
       </ul>
       <button (click)="editMealButtonClicked(meal)">Edit</button>
     </div>
   `
 })
-export class AllMealsComponent{
+export class AllMealsComponent {
   @Input() childMealList: Meal[];
   @Output() clickSender = new EventEmitter();
   // filterByProcessed: string = "allMeals";
   editMealButtonClicked(mealToEdit: Meal) {
+    console.log("in edit button");
     this.clickSender.emit(mealToEdit);
   }
   // onProcessedChange(optionFromMenu) {

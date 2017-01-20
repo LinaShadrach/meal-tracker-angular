@@ -12,6 +12,7 @@ import { AllMealsComponent} from './all-meals.component';
       <all-meals [childMealList]="masterMealList" (clickSender)="editMeal($event)"></all-meals>
       <button (click)="showAddMealForm();">add meal</button>
       <new-meal [childNewMeal]="addMeal" (newMealSender)="addMealToList($event)"></new-meal>
+      <edit-meal [childMealToEdit]="selectedMeal" (doneEditingClickSender)="doneEditing()"></edit-meal>
       <h4>{{currentTime}}</h4>
     </div>
   `
@@ -31,14 +32,14 @@ export class AppComponent {
     this.addMeal = true;
   }
   editMeal(clickedMeal) {
+    console.log("in edit");
       this.selectedMeal = clickedMeal;
-    }
-    doneEditing() {
-      this.selectedMeal = null;
-    }
+  }
+  doneEditing() {
+    this.selectedMeal = null;
+  }
   addMealToList(newMealFromChild: Meal) {
     this.masterMealList.push(newMealFromChild);
     this.addMeal = false;
-
   }
 }
