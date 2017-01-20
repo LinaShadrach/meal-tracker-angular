@@ -14,25 +14,26 @@ import { FoodGroupList } from './food-group-list.model';
           <input #newTime type="time">
           <br>
         </div>
-          <label for="fats">fats: </label>
-          <input #fats type="number">
-          <label for="fruits">fruits: </label>
-          <input #fruits type="number">
-          <label for="grains">grains: </label>
-          <input #grains type="number">
-          <label for="protein">protein: </label>
-          <input #protein type="number">
-          <label for="vegetables">vegetables: </label>
-          <input #vegetables type="number">
-          <label for="sweets">sweets: </label>
-          <input #sweets type="number">
-          <br>
+        <h4>Food Group Servings: </h4>
+        <label for="fats">fats: </label>
+        <input #fats type="number">
+        <label for="fruits">fruits: </label>
+        <input #fruits type="number">
+        <label for="grains">grains: </label>
+        <input #grains type="number">
+        <label for="protein">protein: </label>
+        <input #protein type="number">
+        <label for="vegetables">vegetables: </label>
+        <input #vegetables type="number">
+        <label for="sweets">sweets: </label>
+        <input #sweets type="number">
+        <div>
           <label>processed or unprocessed?</label>
           <br>
           <input name="processed" (change)="updateProcessed(true);" type="radio"> processed
           <input name="processed" (change)="updateProcessed(false);" type="radio"> unprocessed
-          <br>
-          <button (click)="submitForm(newName.value, [fats.value, fruits.value, grains.value, protein.value, vegetables.value, sweets.value], newTime.value); newName.value=''; newTime.value='';">add</button>
+        </div>
+        <button (click)="submitForm(newName.value, [fats.value, fruits.value, grains.value, protein.value, vegetables.value, sweets.value], newTime.value); newName.value=''; newTime.value='';">add</button>
       </div>
     </div>
   `

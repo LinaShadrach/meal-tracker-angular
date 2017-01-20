@@ -14,6 +14,7 @@ import { Meal } from './meal.model';
         <input [(ngModel)]=childMealToEdit.time type="time">
         <br>
       </div>
+      <h4>Food Group Servings: </h4>
         <label for="fats">fats: </label>
         <input [(ngModel)]=childMealToEdit.amounts[0] type="number">
         <label for="fruits">fruits: </label>
@@ -36,7 +37,6 @@ import { Meal } from './meal.model';
     </div>
   </div>
   `
-
 })
 export class EditMealComponent{
   @Input() childMealToEdit: Meal;

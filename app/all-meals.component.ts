@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
+import { FoodGroupList } from './food-group-list.model';
 @Component({
   selector: 'all-meals',
   template: `
@@ -10,9 +11,10 @@ import { Meal } from './meal.model';
       <option value="unprocessed">unprocessed meals</option>
     </select>
     <div *ngFor="let meal of childMealList | byProcess:filterByProcess">
-      <h4>{{meal.name}}</h4>
+      <h3>{{meal.name}}</h3>
+      <h4>eaten at {{meal.time}}</h4>
       <ul>
-        <li *ngFor="let foodGroup of meal.amounts"> {{foodGroup}}</li>
+        <li *ngFor="let foodGroup of meal.amounts; let i=index"> {{masterFoodGroupList[i]}}: {{foodGroup}}</li>
       </ul>
       <button (click)="editMealButtonClicked(meal)">Edit</button>
     </div>
@@ -22,6 +24,9 @@ export class AllMealsComponent {
   @Input() childMealList: Meal[];
   @Output() clickSender = new EventEmitter();
   filterByProcess: string = "allMeals";
+  tempFoodGroup = new FoodGroupList();
+  masterFoodGroupList = this.tempFoodGroup.foodGroupList;
+
   editMealButtonClicked(mealToEdit: Meal) {
     console.log("in edit button");
     this.clickSender.emit(mealToEdit);
