@@ -69,6 +69,13 @@ gulp.task('sassBuild', function() {
     .pipe(gulp.dest('./build/css'));
 });
 
+gulp.task('add-images', function() {
+    gulp.src([
+      'resources/images/*.jpg'
+    ])
+    .pipe(gulp.dest('build/images'))
+});
+
 ////////////////////// SERVER //////////////////////
 
 

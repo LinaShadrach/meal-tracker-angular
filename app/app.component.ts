@@ -8,8 +8,10 @@ import { AllMealsComponent} from './all-meals.component';
   template: `
     <div class="container">
       <h1>Meal Tracker</h1>
-      <all-meals [childMealList]="masterMealList" (clickSender)="editMeal($event)"></all-meals>
-      <button (click)="showAddMealForm();">add meal</button>
+      <div *ngIf="!selectedMeal">
+        <all-meals [childMealList]="masterMealList" (clickSender)="editMeal($event)"></all-meals>
+        <button (click)="showAddMealForm();">add meal</button>
+      </div>
       <new-meal [childNewMeal]="addMeal" (newMealSender)="addMealToList($event)"></new-meal>
       <edit-meal [childMealToEdit]="selectedMeal" (doneEditingClickSender)="doneEditing()"></edit-meal>
       <h4>{{currentTime}}</h4>

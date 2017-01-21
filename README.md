@@ -29,23 +29,23 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `gulp serve`
-* Visit your app at [http://localhost:3000](http://localhost:3000).
+* Visit app at [http://localhost:3000](http://localhost:3000).
 
 ### Building
 
 * `gulp build`
 
 
-  ## Known Bugs
+## Known Bugs
 
-  _None known._
+_None known._
 
-  ## Support and contact details
-  _Please contact author through GitHub at username: LinaShadrach_
+## Support and contact details
+_Please contact author through GitHub at username: LinaShadrach_
 
-  ## Technologies and Resources used
-  _Angular 2, Bower, Bootstrap, CSS, GitHub, HTML, Javascript, Node.js, Typescript_
+## Technologies and Resources used
+_Angular 2, Bower, Bootstrap, CSS, GitHub, HTML, Javascript, Node.js, Typescript_
 
-  ### License
-  _MIT_
+### License
+_MIT_
   Copyright(c) 2016 ***Lina Shadrach***

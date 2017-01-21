@@ -11,12 +11,13 @@ import { FoodGroupList } from './food-group-list.model';
       <option value="unprocessed">unprocessed meals</option>
     </select>
     <div *ngFor="let meal of childMealList | byProcess:filterByProcess">
-      <h3>{{meal.name}}</h3>
-      <h4>eaten at {{meal.time}}</h4>
-      <ul>
-        <li *ngFor="let foodGroup of meal.amounts; let i=index"> {{masterFoodGroupList[i]}}: {{foodGroup}}</li>
-      </ul>
-      <button (click)="editMealButtonClicked(meal)">Edit</button>
+      <ol>
+        <li><h3 (click)="editMealButtonClicked(meal)">{{meal.name}}</h3><h4>eaten at {{meal.time}}</h4></li>
+
+        <ul>
+          <li *ngFor="let foodGroup of meal.amounts; let i=index"> {{masterFoodGroupList[i]}}: {{foodGroup}}</li>
+        </ul>
+      </ol>
     </div>
   `
 })
