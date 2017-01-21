@@ -7,14 +7,15 @@ import { AllMealsComponent} from './all-meals.component';
   selector: 'app-root',
   template: `
     <div class="container">
-      <h1>Meal Tracker</h1>
+      <div class="jumbotron">
+        <h1>Meal Tracker</h1>
+      </div>
       <div *ngIf="!selectedMeal">
+      <button id="addMeal" (click)="showAddMealForm();">add meal</button>
         <all-meals [childMealList]="masterMealList" (clickSender)="editMeal($event)"></all-meals>
-        <button (click)="showAddMealForm();">add meal</button>
       </div>
       <new-meal [childNewMeal]="addMeal" (newMealSender)="addMealToList($event)"></new-meal>
       <edit-meal [childMealToEdit]="selectedMeal" (doneEditingClickSender)="doneEditing()"></edit-meal>
-      <h4>{{currentTime}}</h4>
     </div>
   `
 })

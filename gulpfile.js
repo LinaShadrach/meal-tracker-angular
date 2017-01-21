@@ -51,7 +51,7 @@ gulp.task('cssBowerClean', function(){
   return del(['./build/css/vendor.css']);
 });
 
-gulp.task('cssBower', ['cssBowerClean'], function() {
+gulp.task('cssBower', function() {
   return gulp.src(lib.ext('css').files)
     .pipe(concat('vendor.css'))
     .pipe(gulp.dest('./build/css'));

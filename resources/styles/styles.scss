@@ -2,6 +2,31 @@ body {
   background-image: url(../images/journal.jpg);
   background-size: cover;
 }
+.jumbotron {
+  text-align: center;
+  margin: 10%;
+  margin-bottom: 5%
+}
+.filter {
+  float: right;
+  margin: 1%;
+}
+.mealBox{
+  background-color: rgba(255, 255, 255, .3);
+  width: 300px;
+  margin-top: 10%;
+  margin-left: 20%;
+  padding: 2%;
+}
+.mealForm{
+  background-color: rgba(255, 255, 255, .3);
+  width:75%;
+  margin-left: 15%;
+  padding: 2%;
+}
+addMeal{
+  margin-left: 1%;
+}
 li {
   h3:hover {
     color: gold;

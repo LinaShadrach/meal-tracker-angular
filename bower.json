@@ -1,6 +1,6 @@
 {
-  "name": "angular2-skeleton",
-  "description": "basic template for angular2 projects",
+  "name": "meal-tracker-angular",
+  "description": "basic app for tracking daily meals",
   "main": "",
   "authors": [
     "Lina Shadrach <lina.shadrach@gmail.com>"

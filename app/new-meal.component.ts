@@ -4,7 +4,7 @@ import { FoodGroupList } from './food-group-list.model';
 @Component({
   selector: 'new-meal',
   template: `
-    <div>
+    <div class="mealForm">
       <div *ngIf="childNewMeal">
         <h3>add meal</h3>
         <div>

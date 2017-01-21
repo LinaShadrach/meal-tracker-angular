@@ -4,13 +4,16 @@ import { FoodGroupList } from './food-group-list.model';
 @Component({
   selector: 'all-meals',
   template: `
-    <label>filter by processed or unprocessed.</label>
-    <select (change)="onProcessChange($event.target.value)">
-      <option value="allMeals">all meals</option>
-      <option value="processed">processed meals</option>
-      <option value="unprocessed">unprocessed meals</option>
-    </select>
-    <div *ngFor="let meal of childMealList | byProcess:filterByProcess">
+    <div class="filter">
+      <label>filter by processed or unprocessed.</label>
+      <select (change)="onProcessChange($event.target.value)">
+        <option value="allMeals">all meals</option>
+        <option value="processed">processed meals</option>
+        <option value="unprocessed">unprocessed meals</option>
+      </select>
+    </div>
+    <br><br><br><br>
+    <div *ngFor="let meal of childMealList | byProcess:filterByProcess" class="mealBox">
       <ol>
         <li><h3 (click)="editMealButtonClicked(meal)">{{meal.name}}</h3><h4>eaten at {{meal.time}}</h4></li>
 
